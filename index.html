@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -10,8 +7,10 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <link
       rel="stylesheet"
@@ -21,84 +20,110 @@
     />
   </head>
   <body>
-    <!-- content area -->
-    <header class="container-fluid bg-dark"><h1 class="text-light text-center">Weather Dashboard</h1></header>
+    <!-- header-->
+    <!-- <header class="container-fluid bg-dark p-10"> -->
+      <header class="px-5 bg-dark">
+      <h1 class="text-light text-center">Weather Dashboard</h1>
+    </header>
     <div class="row">
-        <div class="col-2 bg-light pl-4" id="search-section">
-            <!-- search field -->
-            <input class="form-control mr-sm-e w-75 float-left" type="search" placeholder="Search for City" aria-label="Search">
-            <!-- search button -->
-            <button class="btn btn-primary float-left ml-1">
-              <i class="fa fa-search"></i>
-            </button>
-            <div class="card mt-5 w-75" style="width: 18rem;">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Austin</li>
-                  <li class="list-group-item">Chicago</li>
-                  <li class="list-group-item">New York</li>
-                  <li class="list-group-item">Atlanta</li>
-                  <li class="list-group-item">Miami</li>
-                  <li class="list-group-item">Los Angeles</li>
-                  <li class="list-group-item">Boston</li>
-                  <li class="list-group-item">Providence</li>
-                </ul>
-              </div>
+      <div class="col-2 bg-light pl-5" id="search-section">
+        <!-- search field -->
+        <input
+          class="form-control mr-sm-e w-75 float-left"
+          type="search"
+          placeholder="Search for City"
+          aria-label="Search"
+          id="search-field"
+        />
+        <!-- search button -->
+        <button class="btn btn-primary float-left ml-1" 
+        id="search-button">
+          <i class="fa fa-search"></i>
+        </button>
+        <div class="card mt-5 w-75" style="width: 18rem">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Austin</li>
+            <li class="list-group-item">Chicago</li>
+            <li class="list-group-item">New York</li>
+            <li class="list-group-item">Atlanta</li>
+            <li class="list-group-item">Miami</li>
+            <li class="list-group-item">Los Angeles</li>
+            <li class="list-group-item">Boston</li>
+            <li class="list-group-item">Providence</li>
+          </ul>
         </div>
-        <div class="col-lg-10 col-md-8" id="forecast-display">
-            <div class="jumbotron jumbotron-fluid mr-auto h-75 border rounded">
-                <div class="container">
-                  <h1 class="display-4">Fluid jumbotron</h1>
-                  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                </div>
-              </div>
-              <p class="h2"> 5-Day Forecast</p>
-              <div class="card-deck">
-                 
-                <div class="card bg-primary">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body text-white">
-                    <h5 class="card-title">8/16/2020</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                  </div>
-                </div>
-                <div class="card bg-primary text-white">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">8/17/2020</h5>
-                    <p>Temp: 86.84 F</p>
-                    <p>Humidity: 90%</p>
-                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                  </div>
-                </div>
-                <div class="card bg-primary text-white">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">8/18/2020</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                  </div>
-                </div>
-                <div class="card bg-primary text-white">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">8/19/2020</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                    </div>
-                  </div>
-                  <div class="card bg-primary text-white">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">8/2020</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                    </div>
-                  </div>
-              </div>
+      </div>
+      <div class="col-lg-10 col-md-8" id="forecast-display">
+        <div class="jumbotron jumbotron-fluid mr-auto h-75 border rounded">
+          <div class="container">
+            <h1 class="display-4">Today's Forecast</h1>
+            <p class="lead">
+              Forecast will go here 
+            </p>
+          </div>
         </div>
+        <p class="h2">5-Day Forecast</p>
+        <div class="card-deck">
+          <div class="card bg-primary">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body text-white" data-index="0">
+              <h5 class="card-title">8/16/2020</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="card bg-primary text-white" data-index="1">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">8/17/2020</h5>
+              <p>Temp: 86.84 F</p>
+              <p>Humidity: 90%</p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="card bg-primary text-white" data-index="2">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">8/18/2020</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="card bg-primary text-white" data-index="3">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">8/19/2020</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="card bg-primary text-white" data-index="4">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">8/2020</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>    
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
