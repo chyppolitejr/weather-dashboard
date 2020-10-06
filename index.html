@@ -36,7 +36,11 @@
           id="search-field"
         />
         <!-- search button -->
-        <button class="btn btn-primary float-left ml-1" id="search-button">
+        <button
+          class="btn btn-primary float-left ml-1"
+          type="submit"
+          id="search-button"
+        >
           <i class="fa fa-search"></i>
         </button>
         <div class="card mt-5 w-75" style="width: 18rem">
@@ -53,10 +57,10 @@
         </div>
       </div>
       <div class="col-lg-10 col-md-8" id="forecast-display">
-        <div class="jumbotron jumbotron-fluid mr-auto h-75 border rounded">
-          <div class="container">
-            <h1 class="display-4">Today's Forecast</h1>
-            <p class="lead">Forecast will go here</p>
+        <div class="jumbotron jumbotron-fluid bg-white h-50 border rounded">
+          <div class="container m-0">
+            <h1 class="display-6" id="forecast-name">Today's Forecast</h1>
+            <p class="lead" id="forecast-details">Forecast will go here</p>
           </div>
         </div>
         <p class="h2">5-Day Forecast</p>
@@ -141,6 +145,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
