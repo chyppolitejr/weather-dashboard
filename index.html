@@ -10,6 +10,7 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -21,12 +22,14 @@
     <!-- content area -->
     <header class="container-fluid bg-dark"><h1 class="text-light text-center">Weather Dashboard</h1></header>
     <div class="row">
-        <div class="col-2 bg-light v-100" id="search-section">
+        <div class="col-3 bg-light v-100" id="search-section">
             <!-- search field -->
-            <input class="form-control mr-sm-e w-50 float-left" type="search" placeholder="Search for City" aria-label="Search">
+            <input class="form-control mr-sm-e w-75 float-left" type="search" placeholder="Search for City" aria-label="Search">
             <!-- search button -->
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <div class="card" style="width: 18rem;">
+            <button class="btn btn-primary float-right">Search
+              <i class="fa fa-search"></i>
+            </button>
+            <div class="card mt-5 w-75" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Austin</li>
                   <li class="list-group-item">Chicago</li>
@@ -39,7 +42,7 @@
                 </ul>
               </div>
         </div>
-        <div class="col-10" id="forecast-display">
+        <div class="col-lg-9 col-md-8" id="forecast-display">
             <div class="jumbotron jumbotron-fluid h-75 border rounded">
                 <div class="container">
                   <h1 class="display-4">Fluid jumbotron</h1>
@@ -51,42 +54,43 @@
                  
                 <div class="card bg-primary">
                   <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <div class="card-body text-white">
+                    <h5 class="card-title">8/16/2020</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                   </div>
                 </div>
-                <div class="card bg-primary">
+                <div class="card bg-primary text-white">
                   <img src="..." class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">8/17/2020</h5>
+                    <p>Temp: 86.84 F</p>
+                    <p>Humidity: 90%</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                   </div>
                 </div>
-                <div class="card bg-primary">
+                <div class="card bg-primary text-white">
                   <img src="..." class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">8/18/2020</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                   </div>
                 </div>
-                <div class="card bg-primary">
+                <div class="card bg-primary text-white">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title">8/19/2020</h5>
                       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                     </div>
                   </div>
-                  <div class="card bg-primary">
+                  <div class="card bg-primary text-white">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title">8/2020</h5>
                       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                     </div>
                   </div>
               </div>
