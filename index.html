@@ -10,7 +10,9 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -22,11 +24,11 @@
     <!-- content area -->
     <header class="container-fluid bg-dark"><h1 class="text-light text-center">Weather Dashboard</h1></header>
     <div class="row">
-        <div class="col-3 bg-light v-100" id="search-section">
+        <div class="col-2 bg-light pl-4" id="search-section">
             <!-- search field -->
             <input class="form-control mr-sm-e w-75 float-left" type="search" placeholder="Search for City" aria-label="Search">
             <!-- search button -->
-            <button class="btn btn-primary float-right">Search
+            <button class="btn btn-primary float-left ml-1">
               <i class="fa fa-search"></i>
             </button>
             <div class="card mt-5 w-75" style="width: 18rem;">
@@ -42,8 +44,8 @@
                 </ul>
               </div>
         </div>
-        <div class="col-lg-9 col-md-8" id="forecast-display">
-            <div class="jumbotron jumbotron-fluid h-75 border rounded">
+        <div class="col-lg-10 col-md-8" id="forecast-display">
+            <div class="jumbotron jumbotron-fluid mr-auto h-75 border rounded">
                 <div class="container">
                   <h1 class="display-4">Fluid jumbotron</h1>
                   <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
