@@ -15,27 +15,25 @@
 
 $(document).ready(function () {
     
+  var searchListEl = $(".list-group");
+  var searchListItem = $("<li>");
+  var searchListArray = new Array;
 
-// write  search list when document loads
-var searchListLen = localStorage.length;
-var searchListEl = $("#search-list");
-var searchListItem = $("<li>");
+  // if (localStorage.length > 0) {
+    for (i=0; i < localStorage.length;i++){
+      // var searchListItemObj = JSON.parse(localStorage.getItem(i));
 
-searchListItem.addClass("list-group-item");
-// searchListItem.text(cityName);
-// searchListEl.append(searchListItem);
+      searchListArray.push(JSON.parse(localStorage.getItem(i)))
 
-// var searchObj = JSON.parse()
+      populateSearchList(i,searchListArray[i].city, searchListArray[i].state);
 
-console.log(localStorage)
+      console.log("i=" +i + "city: " + searchListArray[i].city + "state:" + searchListArray[i].state);
+    }
+  // } 
+  console.log(localStorage);
+  console.log(searchListArray);
 
-// for (i=0; i < searchListLen;i++){
-
-
-
-// }
-
-
+// search button even listener
    $("#search-button").on("click",function() {
   
     var apiKey = "6cb2a23a9b317017bf903187469c1c65";
@@ -70,24 +68,28 @@ $.ajax({
   cityDisplayName = response.results[0].locations[0].adminArea5;
   stateDisplayName = response.results[0].locations[0].adminArea3;
 
-// save previous search to local storage
-var strSearchListObj = "{CityState:" + cityName + "," + "lat:" + lat + ",long:" + long + "}";
+// // save previous search to local storage and to array
+var strSearchListObj = {"city" : cityDisplayName ,"state" : stateDisplayName , "lat" : lat, "long" :long };
 var localStorageLen = localStorage.length;
-  localStorage.setItem(localStorageLen+1,strSearchListObj);
+  localStorage.setItem(localStorageLen,JSON.stringify(strSearchListObj));
+  searchListArray.push(strSearchListObj);
 
 
 
-  searchListItem.addClass("list-group-item");
-  searchListItem.text(cityName);
-  searchListEl.append(searchListItem);
+//   searchListItem.addClass("list-group-item");
+//   searchListItem.text(cityName);
+//   searchListEl.append(searchListItem);
+
+// populateSearchList();
 
   // ajax call for forecast
   var queryURL="https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long
   + "&exclude=hourly,minutely,alerts&units=imperial"
   + "&appid="
   + apiKey;
-  console.log(queryURL);
+  // console.log(queryURL);
 
+  // api call for weather data
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -106,6 +108,9 @@ var localStorageLen = localStorage.length;
         var iconURL = "http://openweathermap.org/img/wn/"
         + icon 
         + ".png";
+
+        // clear search list field
+        $("#search-field").val("");
 
         // determine uv index rating 0-2 green, 3-5 yellow, 6-7 orange 8-10 red
         if (uvIndex <= 2){uvIDSpanClass = "bg-success"; }
@@ -127,7 +132,7 @@ var localStorageLen = localStorage.length;
        $("#forecast-details").append("<p>" + "Wind Speed: " + wind + " mph");
        $("#forecast-details").append("<p>" + "UV Index: " + "<span class='" + uvIDSpanClass  + " rounded text-white'>" + uvIndex);
        
-       console.log(response.current);
+      //  console.log(response.current);
       //  5 day forecast section
       for (i=0;i<5;i++){
         var unixTS = response.daily[i].dt;
@@ -153,7 +158,7 @@ var localStorageLen = localStorage.length;
 
       }
 
-      console.log(response.daily);
+      // console.log(response.daily);
       
       
     
@@ -176,6 +181,19 @@ var localStorageLen = localStorage.length;
     // var sec = a.getSeconds();
     var time =  month + "/" + date + "/" + year
     return time;
+  }
+
+  function populateSearchList(i,city,state) {
+     var displCityState = city + "," + state;
+      searchListItem.addClass("list-group-item");
+      searchListItem.attr("data-index",i);
+      searchListItem.text(city + "," + state);
+      searchListEl.append("<li " + "class='list-group-item'>" + displCityState );
+
+      //console.log(localStorage.getItem(i));
+
+  
+
   }
 });
 
