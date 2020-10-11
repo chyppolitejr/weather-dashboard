@@ -16,8 +16,28 @@
 $(document).ready(function () {
     
 
+// write  search list when document loads
+var searchListLen = localStorage.length;
+var searchListEl = $("#search-list");
+var searchListItem = $("<li>");
+
+searchListItem.addClass("list-group-item");
+// searchListItem.text(cityName);
+// searchListEl.append(searchListItem);
+
+// var searchObj = JSON.parse()
+
+console.log(localStorage)
+
+// for (i=0; i < searchListLen;i++){
+
+
+
+// }
+
 
    $("#search-button").on("click",function() {
+  
     var apiKey = "6cb2a23a9b317017bf903187469c1c65";
     var cityName = $("#search-field").val();
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" 
@@ -37,8 +57,7 @@ var lat;
 var long;
 var cityDisplayName;
 var stateDisplayName;
-var searchListEl = $("#search-list");
-var searchListItem = $("<li>");
+
 
 //  make call to grab lat and long so we only have to make one call to openweather
 $.ajax({
@@ -52,7 +71,9 @@ $.ajax({
   stateDisplayName = response.results[0].locations[0].adminArea3;
 
 // save previous search to local storage
-  localStorage.setItem(cityName,JSON.stringify(response.results[0].locations[0].latLng));
+var strSearchListObj = "{CityState:" + cityName + "," + "lat:" + lat + ",long:" + long + "}";
+var localStorageLen = localStorage.length;
+  localStorage.setItem(localStorageLen+1,strSearchListObj);
 
 
 
@@ -78,12 +99,20 @@ $.ajax({
         var feelsLike = response.current.feels_like;
         var humidity = response.current.humidity;
         var uvIndex = response.current.uvi;
+        var uvIDSpanClass;
         var imgEl = $("<img>");
         var pEl = $("<p>");
         // get icon from openweather.org
         var iconURL = "http://openweathermap.org/img/wn/"
         + icon 
         + ".png";
+
+        // determine uv index rating 0-2 green, 3-5 yellow, 6-7 orange 8-10 red
+        if (uvIndex <= 2){uvIDSpanClass = "bg-success"; }
+        else if (uvIndex >= 3 && uvIndex <= 5){ uvIDSpanClass="bg-warning"}
+        else if (uvIndex >= 6 && uvIndex <= 7){ uvIDSpanClass="bg-orange"}
+        else (uvIDSpanClass="bg-danger");
+
 //  add icon to page
         imgEl.attr("src",iconURL);
 
@@ -96,7 +125,7 @@ $.ajax({
        $("#forecast-details").append("<p>" + "Feels Like: " + feelsLike + "&deg; F");
        $("#forecast-details").append("<p>" + "Humidity: " + humidity + "&percnt;");   
        $("#forecast-details").append("<p>" + "Wind Speed: " + wind + " mph");
-       $("#forecast-details").append("<p>" + "UV Index: " + "<span class='bg-danger rounded text-white'>" + uvIndex);
+       $("#forecast-details").append("<p>" + "UV Index: " + "<span class='" + uvIDSpanClass  + " rounded text-white'>" + uvIndex);
        
        console.log(response.current);
       //  5 day forecast section
@@ -112,6 +141,7 @@ $.ajax({
         var fcastCardImgEl = $("<img>");
         var fcastCardText = $(".card-text-" + i)
         
+        fcastCardEl.empty();
         fcastCardImgEl.attr("src",currIco);
         console.log(currDt);
         fcastCardEl.append("<h5>" + currDt);
