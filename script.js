@@ -88,10 +88,10 @@ $(document).ready(function () {
 
       //grab lat and long first
     var apiKeyMapquest = "H8AvlVgtzwatdyOwNXLQ3WxMwM9Wh5AY";
-    var mqURL = "http://open.mapquestapi.com/geocoding/v1/address?key=" + apiKeyMapquest + "&location=" + cityName;
+    var mqURL = "https://open.mapquestapi.com/geocoding/v1/address?key=" + apiKeyMapquest + "&location=" + cityName;
     var lat;
     var long;
-    
+
     //  make call to grab lat and long so we only have to make one call to openweather
     $.ajax({
       url: mqURL,
