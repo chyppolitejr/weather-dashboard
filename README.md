@@ -27,7 +27,7 @@ THEN I am presented with the last searched city forecast
 
 
 ## Application Screenshot
-[Weather Dashboard Demo](./assets/weather-dashboard-screenshot.png)
+<img src="./assets/weather-dashboard-screenshot.png">
 
 
 MIT License
