@@ -1,7 +1,7 @@
 # weather-dashboard
 
 
-<img src="weather-dashboard-screenshot.png" width="792" height="447">
+<img src="weather-dashboard-screenshot.png" alt="weather-dashboard">
 
 
 
