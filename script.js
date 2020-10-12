@@ -85,6 +85,13 @@ $(document).ready(function () {
     + "&units=imperial";
 
 
+
+      //grab lat and long first
+    var apiKeyMapquest = "H8AvlVgtzwatdyOwNXLQ3WxMwM9Wh5AY";
+    var mqURL = "http://open.mapquestapi.com/geocoding/v1/address?key=" + apiKeyMapquest + "&location=" + cityName;
+    var lat;
+    var long;
+    
     //  make call to grab lat and long so we only have to make one call to openweather
     $.ajax({
       url: mqURL,
@@ -232,6 +239,8 @@ function runWeatherSearch (URL,city,state) {
       var time =  month + "/" + date + "/" + year
       return time;
     }
+
+    
 }
 // listEl.addEventListener("click", function(event) {
 //   event.preventDefault();
