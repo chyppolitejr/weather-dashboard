@@ -61,7 +61,11 @@ $(document).ready(function () {
     event.preventDefault()
     var clickedVal = $(this);
 
-    // $(this).addClass("active");
+
+    // changes active item to one just clicked
+    $("li").removeClass("active");
+    $(this).addClass("active");
+
     // console.log("you clicked something :" + clickedVal.text() );
     var searchIndexVal = clickedVal.attr("data-index");
     var clickedItemURL;
@@ -232,7 +236,7 @@ populateSearchList(localStorageLen,cityDisplayName, stateDisplayName);
      var listItemEl = $("<li>");
      listItemEl.addClass("list-group-item list-group-item-action");
      listItemEl.attr("data-index",i);
-     listItemEl.attr("data-toggle","tab");
+     listItemEl.attr("data-toggle","list");
      listItemEl.attr("role","tab"); 
      listItemEl.text(displCityState);
 
