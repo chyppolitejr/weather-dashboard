@@ -1,7 +1,7 @@
 # weather-dashboard
 
 ## Application Screenshot
-<img src="weather-dashboard-screenshot.png">
+<img src="weather-dashboard-screenshot.png" width="792" height="447">
 
 
 ## User Story
