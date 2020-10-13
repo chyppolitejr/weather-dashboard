@@ -224,8 +224,8 @@ if (localStorage.length === 0){
 
             // determine uv index rating 0-2 green, 3-5 yellow, 6-7 orange 8-10 red
             if (uvIndex <= 2){uvIDSpanClass = "bg-success"; }
-            else if (uvIndex >= 3 && uvIndex <= 5){ uvIDSpanClass="bg-warning"}
-            else if (uvIndex >= 6 && uvIndex <= 7){ uvIDSpanClass="bg-orange"}
+            else if (uvIndex >= 3 && uvIndex <= 5.9999){ uvIDSpanClass="bg-warning"}
+            else if (uvIndex >= 6 && uvIndex <= 7.9999){ uvIDSpanClass="bg-orange"}
             else (uvIDSpanClass="bg-danger");
 
     //  add icon to page
