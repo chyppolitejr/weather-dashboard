@@ -9,20 +9,32 @@ $(document).ready(function () {
       var lastSearchCity;
       var lastSearchState;
       var maxArrayI;
+      var apiKey = "6cb2a23a9b317017bf903187469c1c65";
 
+console.log (localStorage.length);
 
+if (localStorage.length === 0){
+  var defaultURL="https://api.openweathermap.org/data/2.5/onecall?lat=40.7128&lon=74.0060&lon=74.0060" 
+  + "&exclude=hourly,minutely,alerts&units=imperial"
+  + "&appid="
+  + apiKey;
 
+        console.log(defaultURL);
+        runWeatherSearch (defaultURL,"New York","NY") 
+} else
     // checking localstorage for values and will only run when there are
       if (localStorage.length > 0) {
-        for (i=0; i < localStorage.length;i++){
+         
+        
+        for ( i = 0; i < localStorage.length;i++){
         
 
           searchListArray.push(JSON.parse(localStorage.getItem(i)))
 
           populateSearchList(i,searchListArray[i].city, searchListArray[i].state);
 
-
-          // console.log(searchListArray);
+          // console.log(i);
+          
         }
 
         maxArrayI = searchListArray.length-1;
@@ -78,7 +90,7 @@ $(document).ready(function () {
     // search button event listener
       $("#search-button").on("click",function() {
       
-        var apiKey = "6cb2a23a9b317017bf903187469c1c65";
+        //var apiKey = "6cb2a23a9b317017bf903187469c1c65";
         var cityName = $("#search-field").val();
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" 
         + cityName 
@@ -112,8 +124,8 @@ $(document).ready(function () {
             //   })
       
           //grab lat and long first
-        var apiKeyMapquest = "H8AvlVgtzwatdyOwNXLQ3WxMwM9Wh5AY";
-        var mqURL = "https://open.mapquestapi.com/geocoding/v1/address?key=" + apiKeyMapquest + "&location=" + cityName;
+        // var apiKeyMapquest = "H8AvlVgtzwatdyOwNXLQ3WxMwM9Wh5AY";
+        // var mqURL = "https://open.mapquestapi.com/geocoding/v1/address?key=" + apiKeyMapquest + "&location=" + cityName;
         var lat;
         var long;
 
@@ -129,7 +141,7 @@ $(document).ready(function () {
           long = response.items[0].position.lng;
 
           cityDisplayName = response.items[0].address.city;
-          stateDisplayName = response.items[0].address.state;
+          stateDisplayName = response.items[0].address.stateCode;
 
 
         // populateSearchList();
@@ -207,7 +219,7 @@ $(document).ready(function () {
             + ".png";
 
             // clear search list field
-            //$("#search-field").val("");
+            $("#search-field").val("");
 
             // determine uv index rating 0-2 green, 3-5 yellow, 6-7 orange 8-10 red
             if (uvIndex <= 2){uvIDSpanClass = "bg-success"; }
