@@ -215,7 +215,7 @@ if (localStorage.length === 0){
             var imgEl = $("<img>");
             var pEl = $("<p>");
             // get icon from openweather.org
-            var iconURL = "http://openweathermap.org/img/wn/"
+            var iconURL = "https://openweathermap.org/img/wn/"
             + icon 
             + ".png";
 
