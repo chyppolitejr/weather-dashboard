@@ -183,29 +183,7 @@ $(document).ready(function () {
 
       }
     });
-    // function getGeoCode(inputCity){
-    //   var hereKey = "grNmrExtr7apIa4zVktyyAKybcEmCrmVcn1RatuIYLs"
-    //   URL = "https://geocode.search.hereapi.com/v1/geocode?q="
-    //   + inputCity
-    //   + "&apiKey="
-    //   + hereKey;
-      
-    //   var latFromHere;
-    //   var lngFromHere;
-
-    //   $.ajax({
-    //     url: URL,
-    //     async: false,
-    //     method: "GET"
-    //     }).then(function(response){
-    //       console.log(response.items[0].position);
-    //       latFromHere = response.items[0].position.lat;
-    //       console.log(response.items[0].position.lat);
-    //       console.log(response.items[0].position.lng);
-    //       lngFromHere = response.items[0].position.lng; 
-    //     })
-    //     console.log("last is: " + latFromHere);
-    //   };
+  
 
     function runWeatherSearch (URL,city,state) {
       //  make call to grab lat and long so we only have to make one call to openweather
@@ -256,7 +234,7 @@ $(document).ready(function () {
           for (i=0;i<5;i++){
             var unixTS = response.daily[i].dt;
             var currDt = timeConverter(unixTS);
-            var currIco = "http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png";
+            var currIco = "https://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png";
             var currTemp = response.daily[i].temp.day + "&deg;" + " F";
             var currHumidity = response.daily[i].humidity + "&percnt;";
             var cardId = "#card-" +i;
