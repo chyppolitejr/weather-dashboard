@@ -13,6 +13,7 @@ $(document).ready(function () {
 
 console.log (localStorage.length);
 
+// executes an api call for a default city forecast to display when opening website for first time
 if (localStorage.length === 0){
   var defaultURL="https://api.openweathermap.org/data/2.5/onecall?lat=40.7128&lon=74.0060&lon=74.0060" 
   + "&exclude=hourly,minutely,alerts&units=imperial"
