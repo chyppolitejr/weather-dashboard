@@ -112,21 +112,6 @@ if (localStorage.length === 0){
             var latFromHere;
             var lngFromHere;
 
-            // $.ajax({
-            //   url: URL,
-            //   async: false,
-            //   method: "GET"
-            //   }).then(function(response){
-            //     console.log(response.items[0].position);
-            //     latFromHere = response.items[0].position.lat;
-            //     console.log(response.items[0].position.lat);
-            //     console.log(response.items[0].position.lng);
-            //     lngFromHere = response.items[0].position.lng; 
-            //   })
-      
-          //grab lat and long first
-        // var apiKeyMapquest = "H8AvlVgtzwatdyOwNXLQ3WxMwM9Wh5AY";
-        // var mqURL = "https://open.mapquestapi.com/geocoding/v1/address?key=" + apiKeyMapquest + "&location=" + cityName;
         var lat;
         var long;
 
@@ -136,8 +121,6 @@ if (localStorage.length === 0){
           method: "GET"
         }).then(function(response){
           // console.log(response);
-          // lat = response.results[0].locations[0].latLng.lat;
-          // long = response.results[0].locations[0].latLng.lng;
           lat = response.items[0].position.lat;
           long = response.items[0].position.lng;
 
@@ -145,7 +128,7 @@ if (localStorage.length === 0){
           stateDisplayName = response.items[0].address.stateCode;
 
 
-        // populateSearchList();
+     
 
           // ajax call for forecast
           var queryURL="https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long
@@ -165,7 +148,7 @@ if (localStorage.length === 0){
           // api call for weather data
         runWeatherSearch(queryURL,cityDisplayName,stateDisplayName);
         populateSearchList(localStorageLen,cityDisplayName, stateDisplayName);
-        // getGeoCode(cityName);
+      
 
         // console.log(latLng);
         
@@ -186,10 +169,7 @@ if (localStorage.length === 0){
         listItemEl.attr("role","tab"); 
         listItemEl.text(displCityState);
 
-          // searchListItem.addClass("list-group-item");
-          // searchListItem.attr("data-index",i);
-          // searchListItem.text(city + "," + state);
-          //searchListEl.append("<li " + "class='list-group-item'>" + displCityState );
+        
           searchListEl.append(listItemEl);
 
           //console.log(localStorage.getItem(i));
@@ -291,12 +271,5 @@ if (localStorage.length === 0){
     
 }
 
-// listEl.addEventListener("click", function(event) {
-//   event.preventDefault();
-//   if(event.target.matches("button")) {
-//     var item = document.createElement("div");
-//     item.textContent = groceries[event.target.parentElement.id];
-//     shoppingCartEl.append(item);
-//   }
-// });
+
 
