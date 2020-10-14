@@ -1,5 +1,7 @@
 # weather-dashboard
 
+![screenshot](weather-dashboard-screenshot.png)
+
 
 <img src="weather-dashboard-screenshot.png" alt="weather-dashboard">
 
